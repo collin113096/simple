@@ -24,7 +24,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        
-        return view('student.home');
+        switch(Auth::id()){
+            case 2:
+                return view('cashier.charges');
+            default:
+                return view('student.home');
+        }
     }
 }

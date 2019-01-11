@@ -21,4 +21,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::view('/parent','student.parent')->middleware('auth');
 Route::view('/requirement','student.requirement')->middleware('auth');
 Route::view('/cashier','cashier.home')->middleware('auth');
-Route::view('/wow','student.requirement');
+
+Route::view('/cashier/payment','cashier.payment');
+Route::view('/cashier/charges','cashier.charges');
+Route::view('/cashier/charge/edit','cashier.edit_charge');
+Route::view('/cashier/payment/edit','cashier.edit_payment');
