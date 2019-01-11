@@ -19,7 +19,11 @@ class UserPolicy
         //
     }
 
-    public function viewNavbar(User $user){
+    public function viewStudentNavBar(User $user){
+        return $user->id !== 2;
+    }
+
+     public function viewCashierNavBar(User $user){
         return $user->id === 2;
     }
 }
