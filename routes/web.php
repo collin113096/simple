@@ -18,5 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::view('/parent','parent');
-Route::view('/requirement','requirement');
+Route::view('/parent','student.parent')->middleware('auth');
+Route::view('/requirement','student.requirement')->middleware('auth');
+Route::view('/cashier','cashier.home')->middleware('auth');
+Route::view('/wow','student.requirement');
