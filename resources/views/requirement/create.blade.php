@@ -6,9 +6,10 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    <span class="d-block p-lg-4 h4">Step 3: Requirements</span>
+                    <span class="d-block p-lg-4 h4">Step 4: Requirements</span>
                 </div>
-
+                <form method="post" action="{{ route('requirement.store') }}">
+                    @csrf
                 <div class="card-body">
                     
                     <!--START -->
@@ -246,8 +247,9 @@
                    
                 </div>
                 <div class="card-footer d-flex justify-content-end">
-                    <button class="btn btn-lg btn-success">Next</button>
+                    <button class="btn btn-lg btn-success" type="submit">Next</button>
                 </div>
+                </form>
             </div>
         </div>
     </div>

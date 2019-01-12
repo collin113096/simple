@@ -35,7 +35,8 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Student::create(request()->all() + ['user_id' => auth()->id()]);
+        return redirect()->route('father.create');
     }
 
     /**

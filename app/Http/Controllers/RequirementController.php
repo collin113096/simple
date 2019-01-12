@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Requirement;
+use App\Student;
+
 use Illuminate\Http\Request;
 
 class RequirementController extends Controller
@@ -24,7 +26,7 @@ class RequirementController extends Controller
      */
     public function create()
     {
-        //
+        return view('requirement.create');
     }
 
     /**
@@ -35,7 +37,35 @@ class RequirementController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $student = Student::find(auth()->id());
+        $student->requirements()->createMany([
+            [
+                'url' =>  request('birth_certificate'),
+                'type' => "Birth Certificate",
+            ],
+             [
+                'url' =>  request('certificate_of_transfer'),
+                'type' => "Certificate of Transfer",
+            ],
+             [
+                'url' =>  request('certificate_of_good_moral_character'),
+                'type' => "Certificate of Good Moral Character",
+            ],
+            [
+                'url' =>  request('form137'),
+                'type' => "Transcript of Record",
+            ],
+            [
+                'url' =>  request('form138'),
+                'type' => "Report Card",
+            ],
+            [
+                'url' =>  request('picture'),
+                'type' => "Picture",
+            ],
+        ]);
+       
+       
     }
 
     /**

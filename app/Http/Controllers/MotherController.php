@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mother;
+use App\Student;
 use Illuminate\Http\Request;
 
 class MotherController extends Controller
@@ -24,7 +25,7 @@ class MotherController extends Controller
      */
     public function create()
     {
-        //
+        return view('mother.create');
     }
 
     /**
@@ -33,9 +34,14 @@ class MotherController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
-        //
+        $mother_record = Mother::create(request()->all());
+
+        $student = Student::find(auth()->id());
+        $student->mother_id = $mother_record->id;
+        $student->save();
+        return redirect()->route('requirement.create');
     }
 
     /**

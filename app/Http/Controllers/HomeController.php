@@ -28,7 +28,7 @@ class HomeController extends Controller
             case 2:
                 return view('cashier.charges');
             default:
-                return view('student.home');
+                return view('student.create');
         }
     }
 }

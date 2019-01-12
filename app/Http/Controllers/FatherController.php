@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Father;
+use App\Student;
 use Illuminate\Http\Request;
 
 class FatherController extends Controller
@@ -12,6 +13,7 @@ class FatherController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
         //
@@ -24,7 +26,7 @@ class FatherController extends Controller
      */
     public function create()
     {
-        //
+        return view('father.create');
     }
 
     /**
@@ -33,9 +35,14 @@ class FatherController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
-        //
+        $father_record = Father::create(request()->all());
+
+        $student = Student::find(auth()->id());
+        $student->father_id = $father_record->id;
+        $student->save();
+        return redirect()->route('mother.create');
     }
 
     /**

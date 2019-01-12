@@ -10,6 +10,22 @@ use App\Mother;
 class Student extends Model
 {
     public $timestamps = false;
+    protected $fillable = [
+        'user_id',
+        'last_name',
+        'middle_name',
+        'first_name',
+        'barangay',
+        'municipality',
+        'province',
+        'birth_date',
+        'birth_place',
+        'religion',
+        'gender',
+        'grade',
+        'father_id',
+        'student_id',
+    ];
 
     public function requirements(){
     	return $this->hasMany(Requirement::class);

@@ -23,11 +23,17 @@ class CreateStudentsTable extends Migration
             $table->string('municipality');
             $table->string('province');
             $table->date('birth_date');
+            $table->date('birth_place');
             $table->string('religion');
             $table->string('gender');
             $table->string('grade');
-            $table->unsignedInteger('father_id');
-            $table->unsignedInteger('mother_id');
+            $table->unsignedInteger('father_id')->nullable();
+            $table->unsignedInteger('mother_id')->nullable();
+
+
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('father_id')->references('id')->on('fathers');
+            $table->foreign('mother_id')->references('id')->on('mothers');
         });
     }
 
