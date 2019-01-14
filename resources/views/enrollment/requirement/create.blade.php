@@ -8,7 +8,7 @@
                 <div class="card-header">
                     <span class="d-block p-lg-4 h4">Step 4: Requirements</span>
                 </div>
-                <form method="post" action="{{ route('requirement.store') }}">
+                <form method="post" action="{{ route('requirement.store') }}" enctype="multipart/form-data">
                     @csrf
                 <div class="card-body">
                    <div class="row mb-5">

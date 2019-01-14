@@ -40,31 +40,32 @@ class RequirementController extends Controller
         $student = Student::find(auth()->id());
         $student->requirements()->createMany([
             [
-                'url' =>  request('birth_certificate'),
+                'url' =>  $request->file('birth_certificate')->store('Birth Certificate'),
                 'type' => "Birth Certificate",
             ],
              [
-                'url' =>  request('certificate_of_transfer'),
+                'url' =>  $request->file('certificate_of_transfer')->store('Transfer'),
                 'type' => "Certificate of Transfer",
             ],
              [
-                'url' =>  request('certificate_of_good_moral_character'),
+                'url' =>  $request->file('certificate_of_good_moral_character')->store('Good Moral'),
                 'type' => "Certificate of Good Moral Character",
             ],
             [
-                'url' =>  request('form137'),
+                'url' =>  $request->file('form137')->store('Form 137'),
                 'type' => "Transcript of Record",
             ],
             [
-                'url' =>  request('form138'),
+                'url' =>  $request->file('form138')->store('Form 138'),
                 'type' => "Report Card",
             ],
             [
-                'url' =>  request('picture'),
+                'url' =>  $request->file('picture')->store('Picture'),
                 'type' => "Picture",
             ],
         ]);
        
+
        
     }
 
