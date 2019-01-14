@@ -8,7 +8,7 @@
                   <span aria-hidden="true">&times;</span>
                 </button>
                 <h4 class="alert-heading">Check Your Notifications</h4>
-                <p>After submitting your requirement, check your notification often. Before you go to the school ensure that your application for enrollment is approved.</p>
+                <p>After you submited your requirement, check your notification often to ensure that your application for enrollment is approved.</p>
             </div>
             <form method="post" action="{{ route('student.store') }}">
             @csrf
