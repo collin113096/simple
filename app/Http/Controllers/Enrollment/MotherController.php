@@ -26,7 +26,7 @@ class MotherController extends Controller
      */
     public function create()
     {
-        return view('mother.create');
+        return view('enrollment.mother.create');
     }
 
     /**

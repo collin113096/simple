@@ -26,7 +26,7 @@ class RequirementController extends Controller
      */
     public function create()
     {
-        return view('requirement.create');
+        return view('enrollment.requirement.create');
     }
 
     /**

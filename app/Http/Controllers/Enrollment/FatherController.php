@@ -27,7 +27,7 @@ class FatherController extends Controller
      */
     public function create()
     {
-        return view('father.create');
+        return view('enrollment.father.create');
     }
 
     /**
