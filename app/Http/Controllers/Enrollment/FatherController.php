@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Enrollment;
 
 use App\Father;
 use App\Student;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class FatherController extends Controller

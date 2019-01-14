@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Enrollment;
 
-use App\Mother;
 use App\Student;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class MotherController extends Controller
+class StudentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -25,7 +25,7 @@ class MotherController extends Controller
      */
     public function create()
     {
-        return view('mother.create');
+        return view('student.create');
     }
 
     /**
@@ -34,23 +34,19 @@ class MotherController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store()
+    public function store(Request $request)
     {
-        $mother_record = Mother::create(request()->all());
-
-        $student = Student::find(auth()->id());
-        $student->mother_id = $mother_record->id;
-        $student->save();
-        return redirect()->route('requirement.create');
+        Student::create(request()->all() + ['user_id' => auth()->id()]);
+        return redirect()->route('father.create');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Mother  $mother
+     * @param  \App\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function show(Mother $mother)
+    public function show(Student $student)
     {
         //
     }
@@ -58,10 +54,10 @@ class MotherController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Mother  $mother
+     * @param  \App\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function edit(Mother $mother)
+    public function edit(Student $student)
     {
         //
     }
@@ -70,10 +66,10 @@ class MotherController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Mother  $mother
+     * @param  \App\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Mother $mother)
+    public function update(Request $request, Student $student)
     {
         //
     }
@@ -81,10 +77,10 @@ class MotherController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Mother  $mother
+     * @param  \App\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Mother $mother)
+    public function destroy(Student $student)
     {
         //
     }

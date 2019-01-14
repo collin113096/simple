@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Enrollment;
 
 use App\Requirement;
 use App\Student;
-
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class RequirementController extends Controller

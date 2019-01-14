@@ -18,7 +18,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('/student','StudentController');
-Route::resource('/father','FatherController');
-Route::resource('/mother','MotherController');
-Route::resource('/requirement','RequirementController');
+Route::namespace('Enrollment')->group(function(){
+	Route::resource('/student','StudentController');
+	Route::resource('/father','FatherController');
+	Route::resource('/mother','MotherController');
+	Route::resource('/requirement','RequirementController');
+});
