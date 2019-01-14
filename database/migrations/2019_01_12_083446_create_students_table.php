@@ -23,7 +23,7 @@ class CreateStudentsTable extends Migration
             $table->string('municipality');
             $table->string('province');
             $table->date('birth_date');
-            $table->date('birth_place');
+            $table->string('birth_place');
             $table->string('religion');
             $table->string('gender');
             $table->string('grade');

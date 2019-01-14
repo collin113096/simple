@@ -24,3 +24,6 @@ Route::namespace('Enrollment')->group(function(){
 	Route::resource('/mother','MotherController');
 	Route::resource('/requirement','RequirementController');
 });
+
+Route::resource('/fee','FeeController');
+

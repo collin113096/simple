@@ -13,7 +13,7 @@
                 <div class="card-body">
                    <div class="row mb-5">
                        <div class="col-md-2">                    
-                            <select class="custom-select" id="student_type">
+                            <select name="student_type" class="custom-select" id="student_type">
                                 <option value="" hidden>Type of Student</option>
                                 <option value="New Student">New Student</option>
                                 <option value="Transferee Student">Transferee Student</option>
