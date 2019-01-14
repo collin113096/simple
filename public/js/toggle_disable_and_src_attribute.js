@@ -21,6 +21,7 @@ $('#student_type').change(function(){
    }
 });
 
+disableAll(requirement);
 
 function disableAll(id){ 
 
