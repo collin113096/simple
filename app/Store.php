@@ -52,10 +52,7 @@ class Store extends Model
 
     	foreach($this->form_data as $record){  		
 	        if($record['name'] != $data){
-            	$this->get_student()->requirements()->create([
-                	'url' =>  $this->request->file($record['name'])->store($record['directory']),
-               		'type' => $record['type'],       
-           		]);
+            	$this->insert($record);
 	        } 
     	}
     }
@@ -63,10 +60,7 @@ class Store extends Model
     public function saveAll(){
 
     	foreach($this->form_data as $record){  		
-            	$this->get_student()->requirements()->create([
-                	'url' =>  $this->request->file($record['name'])->store($record['directory']),
-               		'type' => $record['type'],       
-           		]);
+            	$this->insert($record);
     	}
     }
 
@@ -76,13 +70,17 @@ class Store extends Model
     	foreach($data as $datum){  		
         	foreach($this->form_data as $record){
         		if($datum == $record['name']){
-        			$this->get_student()->requirements()->create([
-	                	'url' =>  $this->request->file($record['name'])->store($record['directory']),
-	               		'type' => $record['type'],       
-	           		]);
+        			$this->insert($record);
         		}
         	}
     	}
+    }
+
+    public function insert($record){
+        $this->get_student()->requirements()->create([
+            'url' =>  $this->request->file($record['name'])->store($record['directory']),
+            'type' => $record['type'],       
+        ]);
     }
 
     public function get_student(){
