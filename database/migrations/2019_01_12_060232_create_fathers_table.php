@@ -20,6 +20,7 @@ class CreateFathersTable extends Migration
             $table->string('first_name');
             $table->string('occupation');
             $table->string('contact');
+            $table->boolean('completed')->default(false);
         });
     }
 
