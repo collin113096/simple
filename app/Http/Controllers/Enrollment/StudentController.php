@@ -25,6 +25,9 @@ class StudentController extends Controller
      */
     public function create()
     {
+        if(auth()->user()->cannot('create',Student::class)){
+            return redirect()->route('home');
+        }
         return view('enrollment.student.create');
     }
 
@@ -37,6 +40,8 @@ class StudentController extends Controller
     public function store(Request $request)
     {
         Student::create(request()->all() + ['user_id' => auth()->id()]);
+        auth()->user()->status->student = true;
+        auth()->user()->push();
         return redirect()->route('father.create');
     }
 

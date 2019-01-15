@@ -40,6 +40,9 @@ class FatherController extends Controller
     {
         $father_record = Father::create(request()->all());
 
+        auth()->user()->status->father = true;
+        auth()->user()->push();
+
         $student = Student::find(auth()->id());
         $student->father_id = $father_record->id;
         $student->save();

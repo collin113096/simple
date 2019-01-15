@@ -39,6 +39,9 @@ class MotherController extends Controller
     {
         $mother_record = Mother::create(request()->all());
 
+        auth()->user()->status->mother = true;
+        auth()->user()->push();
+
         $student = Student::find(auth()->id());
         $student->mother_id = $mother_record->id;
         $student->save();

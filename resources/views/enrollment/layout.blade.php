@@ -1,6 +1,9 @@
 @extends('layouts.app')
 @section('link')
 <li class="nav-item">
+  <a class="btn btn-primary" href="{{ route('student.create') }}">Enroll Now</span></a>
+</li> 
+<li class="nav-item">
   <a class="nav-link" href="">Schedule</a>
 </li>
 <li class="nav-item dropdown">
@@ -20,18 +23,17 @@
          <a href="" class="dropdown-item">Link12</a>   
   </div>
 </li>
-<li class="nav-item">
-  <a class="nav-link" href="">Charges <span class="badge badge-danger">5</span></a>
-</li>
-<li class="nav-item">
-  <a class="nav-link" href="">Payment <span class="badge badge-danger">10</span></a>
-</li>
-<li class="nav-item">
-  <a class="nav-link" href="">Balance <span class="badge badge-danger">10</span></a>
+<li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="">Transaction</a>
+  <div class="dropdown-menu">
+         <a class="dropdown-item" href="">Charges <span class="badge badge-danger">5</span></a>
+          <a class="dropdown-item" href="">Payment <span class="badge badge-danger">10</span></a>
+         <a class="dropdown-item" href="">Balance <span class="badge badge-danger">10</span></a>
+  </div>
 </li>
 <li class="nav-item">
   <a class="nav-link" href="">Notifications <span class="badge badge-danger">10</span></a>
-</li>     
+</li>      
 @endsection
 @section('dropdown')
  <a class="dropdown-item" href="#"

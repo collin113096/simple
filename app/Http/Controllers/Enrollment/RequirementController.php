@@ -20,6 +20,11 @@ class RequirementController extends Controller
         // $student = Student::find(auth()->id());
         $requirement = new Store($request);
         $requirement->of_this_user(auth()->id());
+
+        auth()->user()->status->requirement = true;
+        auth()->user()->push();
+
+        return redirect()->route('home');
     }
  
 }
