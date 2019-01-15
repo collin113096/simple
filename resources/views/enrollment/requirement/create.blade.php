@@ -77,7 +77,7 @@
                     </div><!--ROW-->
                 </div><!--CARD BODY -->
                 <div class="card-footer d-flex justify-content-end">
-                    <button class="btn btn-lg btn-success" type="submit">Finish</button>
+                    <button class="btn btn-primary" type="submit">Next</button>
                 </div>
                 </form>
             </div>

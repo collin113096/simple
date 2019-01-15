@@ -69,22 +69,15 @@
                         <div class="col-md-6">
                             <select class="custom-select" name="grade" id="">
                                 <option value="" hidden>Choose Grade</option>
-                                <option value="Grade 1">Grade 1</option>
-                                <option value="Grade 2">Grade 2</option>
-                                <option value="Grade 3">Grade 3</option>
-                                <option value="Grade 4">Grade 4</option>
-                                <option value="Grade 5">Grade 5</option>
-                                <option value="Grade 6">Grade 6</option>
-                                <option value="Grade 7">Grade 7</option>
-                                <option value="Grade 8">Grade 8</option>
-                                <option value="Grade 9">Grade 9</option>
-                                <option value="Grade 10">Grade 10</option>
+                                @foreach($grades as $grade)
+                                 <option value="{{ $grade->id }}">{{ $grade->name }}</option>
+                                 @endforeach
                             </select>
                         </div>
                     </div>
                 </div>
                 <div class="card-footer d-flex justify-content-end">
-                    <button class="btn btn-lg btn-success" type="submit">Next</button>
+                    <button class="btn btn-primary" type="submit">Next</button>
                 </div>
             </div>
         </form>
