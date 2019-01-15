@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Student;
+use App\Enrollment\Student;
 
 class Store extends Model
 { 

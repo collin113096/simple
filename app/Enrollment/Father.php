@@ -3,7 +3,7 @@
 namespace App\Enrollment;
 
 use Illuminate\Database\Eloquent\Model;
-use Student;
+use App\Enrollment\Student;
 
 class Father extends Model
 {

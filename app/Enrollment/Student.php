@@ -3,9 +3,9 @@
 namespace App\Enrollment;
 
 use Illuminate\Database\Eloquent\Model;
-use Requirement;
-use Father;
-use Mother;
+use App\Enrollment\Requirement;
+use App\Enrollment\Father;
+use App\Enrollment\Mother;
 
 class Student extends Model
 {
