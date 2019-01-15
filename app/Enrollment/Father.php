@@ -1,11 +1,11 @@
 <?php
 
-namespace App;
+namespace App\Enrollment;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Student;
+use Student;
 
-class Mother extends Model
+class Father extends Model
 {
     public $timestamps = false;
     protected $fillable = [
@@ -19,4 +19,5 @@ class Mother extends Model
     public function students(){
     	return $this->hasMany(Student::class);
     }
+
 }

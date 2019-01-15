@@ -1,9 +1,9 @@
 <?php
 
-namespace App;
+namespace App\Enrollment;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Student;
+use Student;
 
 class Requirement extends Model
 {

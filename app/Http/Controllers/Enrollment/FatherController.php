@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Enrollment;
 
-use App\Father;
-use App\Student;
+use App\Enrollment\Father;
+use App\Enrollment\Student;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 

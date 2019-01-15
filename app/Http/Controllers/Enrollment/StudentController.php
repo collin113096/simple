@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Enrollment;
 
-use App\Student;
+use App\Enrollment\Student;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 

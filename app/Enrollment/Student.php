@@ -1,11 +1,11 @@
 <?php
 
-namespace App;
+namespace App\Enrollment;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Requirement;
-use App\Father;
-use App\Mother;
+use Requirement;
+use Father;
+use Mother;
 
 class Student extends Model
 {
