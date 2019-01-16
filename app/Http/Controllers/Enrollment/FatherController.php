@@ -27,6 +27,9 @@ class FatherController extends Controller
      */
     public function create()
     {
+        if(auth()->user()->cannot('create',Father::class)){
+            return redirect()->route('home');
+        }
         return view('enrollment.father.create');
     }
 

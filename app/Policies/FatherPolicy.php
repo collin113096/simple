@@ -6,7 +6,7 @@ use App\User;
 use App\Enrollment\Status;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class StudentPolicy
+class FatherPolicy
 {
     use HandlesAuthorization;
 
@@ -20,9 +20,8 @@ class StudentPolicy
         //
     }
 
-    public function create(User $user){
-
-        $status = Status::where('user_id',$user->id)->first();
-        return $status->student != 1;
+    public function create(){
+        $status = Status::where('user_id',auth()->id())->first();
+        return $status->father != 1;
     }
 }
