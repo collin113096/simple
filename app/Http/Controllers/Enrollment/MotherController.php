@@ -26,6 +26,9 @@ class MotherController extends Controller
      */
     public function create()
     {
+        if(auth()->user()->cannot('create',Mother::class)){
+            return redirect()->route('home');
+        }
         return view('enrollment.mother.create');
     }
 
