@@ -1,8 +1,10 @@
 @extends('layouts.app')
 @section('link')
+@cannot('click-enroll')
 <li class="nav-item">
   <a class="btn btn-primary" href="{{ route('student.create') }}">Enroll Now</span></a>
 </li> 
+@endcannot
 <li class="nav-item">
   <a class="nav-link" href="">Schedule</a>
 </li>
@@ -36,9 +38,7 @@
 </li>      
 @endsection
 @section('dropdown')
- <a class="dropdown-item" href="#"
-   onclick="event.preventDefault();
-                 document.getElementById('logout-form').submit();">
+ <a class="dropdown-item" href="{{ route('student.edit') }}">
     {{ __('Profile') }}
 </a>
 @endsection

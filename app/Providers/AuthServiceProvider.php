@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\Facades\Gate;
+use App\Enrollment\Status;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
 class AuthServiceProvider extends ServiceProvider
@@ -29,6 +30,9 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        Gate::define('click-enroll', function($user){
+            $status = Status::where('user_id', $user->id)->first();
+            return $status->student == 1 && $status->father == 1 && $status->mother == 1 && $status->requirement == 1;
+        });
     }
 }
