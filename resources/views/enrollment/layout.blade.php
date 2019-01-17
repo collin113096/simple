@@ -38,10 +38,16 @@
 </li>      
 @endsection
 @php
-$student = \App\Enrollment\Student::where('user_id',auth()->id())->first()
+$student = \App\Enrollment\Student::where('user_id',auth()->id())->first();
+$father = \App\Enrollment\Father::find($student->father_id);
+$mother = \App\Enrollment\Mother::find($student->mother_id);
+$requirement = \App\Enrollment\Requirement::where('student_id', $student->id)->first();
+
 @endphp
 @section('dropdown')
- <a class="dropdown-item" href="{{ route('student.edit',compact('student')) }}">
-    {{ __('Profile') }}
-</a>
+ <a class="dropdown-item" href="{{ route('student.edit',compact('student')) }}">Edit Student</a>
+ <a class="dropdown-item" href="{{ route('father.edit',compact('father')) }}">Edit Father</a>
+ <a class="dropdown-item" href="{{ route('mother.edit',compact('mother')) }}">Edit Mother</a>
+ <a class="dropdown-item" href="{{ route('requirement.edit',compact('requirement')) }}">Edit Requirement</a>
+ <div class="dropdown-divider"></div>
 @endsection

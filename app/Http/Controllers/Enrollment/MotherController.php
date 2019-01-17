@@ -70,7 +70,7 @@ class MotherController extends Controller
      */
     public function edit(Mother $mother)
     {
-        //
+        return view('enrollment.mother.edit',compact('mother'));
     }
 
     /**

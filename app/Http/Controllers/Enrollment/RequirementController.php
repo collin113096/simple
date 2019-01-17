@@ -29,5 +29,10 @@ class RequirementController extends Controller
 
         return redirect()->route('home');
     }
+
+    public function edit(Requirement $requirement){
+        
+        return view('enrollment.requirement.edit',compact('requirement'));
+    }
  
 }

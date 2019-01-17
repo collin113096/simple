@@ -71,7 +71,7 @@ class FatherController extends Controller
      */
     public function edit(Father $father)
     {
-        //
+        return view('enrollment.father.edit',compact('father'));
     }
 
     /**
