@@ -44,15 +44,29 @@
 @endsection
 @php
 $student = \App\Enrollment\Student::where('user_id',auth()->id())->first();
-$father = \App\Enrollment\Father::find($student->father_id);
-$mother = \App\Enrollment\Mother::find($student->mother_id);
-$requirement = \App\Enrollment\Requirement::where('student_id', $student->id)->first();
+if($student != null){
+  $father = \App\Enrollment\Father::find($student->father_id);
+  $mother = \App\Enrollment\Mother::find($student->mother_id);
+  $requirement = \App\Enrollment\Requirement::where('student_id', $student->id)->first();
+}else{
+  $father = null;
+  $mother = null;
+  $requirement = null;
+}
 
 @endphp
 @section('dropdown')
+ @if($student != null)
  <a class="dropdown-item" href="{{ route('student.edit',compact('student')) }}">Edit Student</a>
- <a class="dropdown-item" href="{{ route('father.edit',compact('father')) }}">Edit Father</a>
+ @endif
+@if($father != null)
+   <a class="dropdown-item" href="{{ route('father.edit',compact('father')) }}">Edit Father</a>
+@endif
+@if($mother != null)
  <a class="dropdown-item" href="{{ route('mother.edit',compact('mother')) }}">Edit Mother</a>
+ @endif
+ @if($requirement != null)
  <a class="dropdown-item" href="{{ route('requirement.edit',compact('requirement')) }}">Edit Requirement</a>
+ @endif
  <div class="dropdown-divider"></div>
 @endsection
