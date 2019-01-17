@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Enrollment\Status;
 
-class StudentSeeder extends Seeder
+class StatusSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +12,8 @@ class StudentSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Student::class,20)->create();
+        Status::Create([
+        	'user_id' => 1,
+        ]);
     }
 }

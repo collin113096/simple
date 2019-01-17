@@ -22,6 +22,6 @@ class MotherPolicy
 
     public function create(){
         $status = Status::where('user_id',auth()->id())->first();
-        $status->mother != 1;
+        return $status->mother != 1;
     }
 }
