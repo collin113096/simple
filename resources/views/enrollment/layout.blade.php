@@ -1,4 +1,9 @@
 @extends('layouts.app')
+@section('home')
+<a class="navbar-brand" href="{{ url('/home') }}">
+        {{ config('app.name', 'Laravel') }}
+</a>
+@endsection
 @section('link')
 @cannot('click-enroll')
 <li class="nav-item">
