@@ -27,7 +27,6 @@ class CreateStudentsTable extends Migration
             $table->string('religion');
             $table->string('gender');
             $table->string('grade');
-            $table->boolean('completed')->default(false);
             $table->unsignedInteger('father_id')->nullable();
             $table->unsignedInteger('mother_id')->nullable();
 

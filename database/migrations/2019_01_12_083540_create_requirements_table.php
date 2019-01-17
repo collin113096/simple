@@ -18,7 +18,6 @@ class CreateRequirementsTable extends Migration
             $table->unsignedInteger('student_id');
             $table->string('url');
             $table->string('type');
-            $table->boolean('completed')->default(false);
             $table->foreign('student_id')->references('id')->on('students');
         });
     }
