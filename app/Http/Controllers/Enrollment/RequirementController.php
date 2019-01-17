@@ -12,6 +12,9 @@ class RequirementController extends Controller
 {
     public function create()
     {
+        if(auth()->user()->cannot('create',Requirement::class)){
+            return redirect()->home();
+        }
         return view('enrollment.requirement.create');
     }
 
