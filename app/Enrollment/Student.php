@@ -22,7 +22,7 @@ class Student extends Model
         'birth_place',
         'religion',
         'gender',
-        'grade',
+        'grade_id',
         'father_id',
         'student_id',
     ];

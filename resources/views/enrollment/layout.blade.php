@@ -37,8 +37,11 @@
   <a class="nav-link" href="">Notifications <span class="badge badge-danger">10</span></a>
 </li>      
 @endsection
+@php
+$student = \App\Enrollment\Student::where('user_id',auth()->id())->first()
+@endphp
 @section('dropdown')
- <a class="dropdown-item" href="{{ route('student.edit') }}">
+ <a class="dropdown-item" href="{{ route('student.edit',compact('student')) }}">
     {{ __('Profile') }}
 </a>
 @endsection

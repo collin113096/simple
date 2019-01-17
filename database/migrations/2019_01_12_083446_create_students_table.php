@@ -26,11 +26,12 @@ class CreateStudentsTable extends Migration
             $table->string('birth_place');
             $table->string('religion');
             $table->string('gender');
-            $table->string('grade');
+            $table->unsignedInteger('grade_id');
             $table->unsignedInteger('father_id')->nullable();
             $table->unsignedInteger('mother_id')->nullable();
 
 
+            $table->foreign('grade_id')->references('id')->on('grades');
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('father_id')->references('id')->on('fathers');
             $table->foreign('mother_id')->references('id')->on('mothers');
