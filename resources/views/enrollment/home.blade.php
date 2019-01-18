@@ -30,5 +30,101 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+@foreach($grades as $grade)
+ <!-- Modal -->
+      <div class="modal fade" id="grade{{ $grade->id}}">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">{{ $grade->name }}</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                
+               <div class="card">
+                 <div class="card-header">
+                   Cash
+                 </div>
+                 <div class="card-body">
+                    <table class="table table-borderless">
+                    <caption>Enroll with Only 1,500 pesos everything to pay by installment for whole year. <strong>Note: Books - Cash</strong></caption>
+                    <thead>
+                      <tr>
+                        <th>Fee</th>
+                        <th>Amount</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Registration Fee</td>
+                        <td>1500</td>
+                      </tr>
+                       <tr>
+                        <td>Tuition Fee</td>
+                        <td>1000</td>
+                      </tr>
+                       <tr>
+                        <td>Misc Fee</td>
+                        <td>3000</td>
+                      </tr>
+                       <tr>
+                        <td>Computer Fee</td>
+                        <td>0</td>
+                      </tr>
+                      <tr>
+                        <td class="font-weight-bold">Total</td>
+                        <td class="font-weight-bold">2343240</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                 </div>
+               </div>
+                
 
+                <div class="card mt-3">
+                 <div class="card-header">
+                   Installment
+                 </div>
+                 <div class="card-body">
+                    <table class="table table-borderless">
+                    <caption>Enroll with Only 1,500 pesos everything to pay by installment for whole year. <strong>Note: Books - Cash</strong></caption>
+                    <thead>
+                      <tr>
+                        <th>Fee</th>
+                        <th>Amount</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Registration Fee</td>
+                        <td>1500</td>
+                      </tr>
+                       <tr>
+                        <td>Tuition Fee</td>
+                        <td>1000</td>
+                      </tr>
+                       <tr>
+                        <td>Misc Fee</td>
+                        <td>3000</td>
+                      </tr>
+                       <tr>
+                        <td>Computer Fee</td>
+                        <td>0</td>
+                      </tr>
+                      <tr>
+                        <td class="font-weight-bold">Total</td>
+                        <td class="font-weight-bold">2343240</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                 </div>
+               </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+@endforeach
 @endsection

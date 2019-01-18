@@ -16,18 +16,9 @@
 <li class="nav-item dropdown">
   <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="">Tuition</a>
   <div class="dropdown-menu">
-      <a href="" class="dropdown-item">Link1</a>
-         <a href="" class="dropdown-item">Link2</a>
-         <a href="" class="dropdown-item">Link3</a>
-         <a href="" class="dropdown-item">Link4</a>
-         <a href="" class="dropdown-item">Link5</a>
-         <a href="" class="dropdown-item">Link6</a>
-         <a href="" class="dropdown-item">Link7</a>
-         <a href="" class="dropdown-item">Link8</a>
-         <a href="" class="dropdown-item">Link9</a>
-         <a href="" class="dropdown-item">Link10</a>
-         <a href="" class="dropdown-item">Link11</a>
-         <a href="" class="dropdown-item">Link12</a>   
+      @foreach($grades as $grade)
+      <a href="#grade{{ $grade->id }}" data-toggle="modal" class="dropdown-item">{{ $grade->name }}</a>
+      @endforeach
   </div>
 </li>
 <li class="nav-item dropdown">
@@ -47,7 +38,6 @@ $student = \App\Enrollment\Student::where('user_id',auth()->id())->first();
 if($student != null){
   $father = \App\Enrollment\Father::find($student->father_id);
   $mother = \App\Enrollment\Mother::find($student->mother_id);
-  $requirement = \App\Enrollment\Requirement::where('student_id', $student->id)->first();
 }else{
   $father = null;
   $mother = null;
@@ -65,8 +55,8 @@ if($student != null){
 @if($mother != null)
  <a class="dropdown-item" href="{{ route('mother.edit',compact('mother')) }}">Edit Mother</a>
  @endif
- @if($requirement != null)
- <a class="dropdown-item" href="{{ route('requirement.edit',compact('requirement')) }}">Edit Requirement</a>
+ @if($student != null)
+ <a class="dropdown-item" href="{{ route('requirement.edit',['id' => $student->id]) }}">Edit Requirement</a>
  @endif
  <div class="dropdown-divider"></div>
 @endsection
