@@ -8,8 +8,9 @@
                 <div class="card-header">
                     <span class="d-block p-lg-4 h4">Edit Mother Information</span>
                 </div>
-                <form method="post" action="{{ route('mother.store') }}">
+                <form method="post" action="{{ route('mother.update',compact('mother')) }}">
                 @csrf
+                @method('PATCH')
                 <div class="card-body">
                     <div class="form-group row">
                         <label class="col-md-4 col-form-label text-md-right">Mother Last Name</label>

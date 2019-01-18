@@ -82,7 +82,8 @@ class MotherController extends Controller
      */
     public function update(Request $request, Mother $mother)
     {
-        //
+        $mother->update(request()->all());
+        return redirect()->route('home');
     }
 
     /**
