@@ -3,8 +3,9 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <form method="post" action="{{ route('student.store') }}">
+            <form method="post" action="{{ route('student.update',compact('student')) }}">
             @csrf
+            @method('PATCH')
             <div class="card">
                 <div class="card-header">
                     <span class="d-block p-lg-4 h4">Edit Personal Information</span>
