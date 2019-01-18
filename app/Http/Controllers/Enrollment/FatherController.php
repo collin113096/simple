@@ -83,7 +83,8 @@ class FatherController extends Controller
      */
     public function update(Request $request, Father $father)
     {
-        //
+        $father->update(request()->all());
+        return redirect()->route('home');
     }
 
     /**
