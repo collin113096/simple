@@ -42,86 +42,105 @@
               </button>
             </div>
             <div class="modal-body">
-                
-               <div class="card">
-                 <div class="card-header">
-                   Cash
-                 </div>
-                 <div class="card-body">
-                    <table class="table table-borderless">
-                    <caption>Enroll with Only 1,500 pesos everything to pay by installment for whole year. <strong>Note: Books - Cash</strong></caption>
-                    <thead>
-                      <tr>
-                        <th>Fee</th>
-                        <th>Amount</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>Registration Fee</td>
-                        <td>1500</td>
-                      </tr>
-                       <tr>
-                        <td>Tuition Fee</td>
-                        <td>1000</td>
-                      </tr>
-                       <tr>
-                        <td>Misc Fee</td>
-                        <td>3000</td>
-                      </tr>
-                       <tr>
-                        <td>Computer Fee</td>
-                        <td>0</td>
-                      </tr>
-                      <tr>
-                        <td class="font-weight-bold">Total</td>
-                        <td class="font-weight-bold">2343240</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                 </div>
-               </div>
-                
-
-                <div class="card mt-3">
-                 <div class="card-header">
-                   Installment
-                 </div>
-                 <div class="card-body">
-                    <table class="table table-borderless">
-                    <caption>Enroll with Only 1,500 pesos everything to pay by installment for whole year. <strong>Note: Books - Cash</strong></caption>
-                    <thead>
-                      <tr>
-                        <th>Fee</th>
-                        <th>Amount</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>Registration Fee</td>
-                        <td>1500</td>
-                      </tr>
-                       <tr>
-                        <td>Tuition Fee</td>
-                        <td>1000</td>
-                      </tr>
-                       <tr>
-                        <td>Misc Fee</td>
-                        <td>3000</td>
-                      </tr>
-                       <tr>
-                        <td>Computer Fee</td>
-                        <td>0</td>
-                      </tr>
-                      <tr>
-                        <td class="font-weight-bold">Total</td>
-                        <td class="font-weight-bold">2343240</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                 </div>
-               </div>
-
+              <div id="carouselExampleControls{{ $grade->id}}" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                     @if(!empty($grade))
+                     <div class="card">
+                       <div class="card-header">
+                         Cash
+                       </div>
+                       <div class="card-body">
+                          <table class="table table-hover">
+                          <caption>Enroll with Only 1,500 pesos everything to pay by installment for whole year. <strong>Note: Books - Cash</strong></caption>
+                          <thead>
+                            <tr>
+                              <th>Fee</th>
+                              <th>Amount</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Registration Fee</td>
+                              <td>{{ count($grade->modes) != 0 ? $grade->modes[0]->pivot->registration : '' }}</td>
+                            </tr>
+                             <tr>
+                              <td>Tuition Fee</td>
+                              <td>{{ count($grade->modes) != 0 ? $grade->modes[0]->pivot->tuition : '' }}</td>
+                            </tr>
+                             <tr>
+                              <td>Misc Fee</td>
+                              <td>{{  count($grade->modes) != 0 ? $grade->modes[0]->pivot->misc : ''  }}</td>
+                            </tr>
+                             <tr>
+                              <td>Computer Fee</td>
+                              <td>{{  count($grade->modes) != 0 ? $grade->modes[0]->pivot->computer : ''  }}</td>
+                            </tr>
+                            <tr>
+                              <td class="font-weight-bold">Total</td>
+                              <td class="font-weight-bold">{{ count($grade->modes) != 0 ? collect([$grade->modes[0]->pivot->registration, $grade->modes[0]->pivot->tuition, $grade->modes[0]->pivot->misc, $grade->modes[0]->pivot->computer])->sum() : '' }}</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                       </div>
+                     </div>
+                     @endif
+                  </div>
+                  <div class="carousel-item">
+                      @if(!empty($grade))
+                      <div class="card">
+                         <div class="card-header">
+                           Installment
+                         </div>
+                         <div class="card-body">
+                            <table class="table table-hover">
+                            <caption>Enroll with Only 1,500 pesos everything to pay by installment for whole year. <strong>Note: Books - Cash</strong></caption>
+                            <thead>
+                              <tr>
+                                <th>Fee</th>
+                                <th>Amount</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>Registration Fee</td>
+                                <td>{{  count($grade->modes) != 0 ? $grade->modes[1]->pivot->registration : ''  }}</td>
+                              </tr>
+                               <tr>
+                                <td>Tuition Fee</td>
+                                <td>{{  count($grade->modes) != 0 ? $grade->modes[1]->pivot->tuition : ''  }}</td>
+                              </tr>
+                               <tr>
+                                <td>Misc Fee</td>
+                                <td>{{  count($grade->modes) != 0 ? $grade->modes[1]->pivot->misc : ''  }}</td>
+                              </tr>
+                               <tr>
+                                <td>Computer</td>
+                                <td>{{  count($grade->modes) != 0 ? $grade->modes[1]->pivot->computer : ''  }}</td>
+                              </tr>
+                              <tr>
+                                <td class="font-weight-bold">Total</td>
+                                <td class="font-weight-bold">{{ count($grade->modes) != 0 ? collect([$grade->modes[1]->pivot->registration, $grade->modes[1]->pivot->tuition, $grade->modes[1]->pivot->misc, $grade->modes[1]->pivot->computer])->sum() : '' }}</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                         </div>
+                       </div>
+                        @endif
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls{{ $grade->id}}" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true">sdfsdf</span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls{{ $grade->id}}" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true">sdfsdf</span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-dark" data-dismiss="modal">Close</button>
             </div>
           </div>
         </div>
