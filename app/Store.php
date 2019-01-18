@@ -78,7 +78,7 @@ class Store extends Model
 
     public function insert($record){
         $this->get_student()->requirements()->create([
-            'url' =>  $this->request->file($record['name'])->store($record['directory']),
+            'url' =>  $this->request->file($record['name'])->store('/'),
             'type' => $record['type'],       
         ]);
     }
