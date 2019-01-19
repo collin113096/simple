@@ -81,16 +81,16 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Online Portal
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="https://laravel.com/docs">Attendance</a>
+                    <a href="https://laracasts.com">Payroll</a>
+                    <a href="https://laravel-news.com">Enrollment</a>
+                    <a href="https://nova.laravel.com">Grading</a>
+                    <a href="https://forge.laravel.com">Website</a>
+                    <a href="https://github.com/laravel/laravel">Admin</a>
                 </div>
             </div>
         </div>

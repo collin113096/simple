@@ -27,3 +27,6 @@ Route::group(['namespace' => 'Enrollment','middleware' => 'auth'], function(){
 
 Route::resource('/fee','FeeController');
 
+Route::resource('/charge','ChargeController');
+Route::resource('/payment','PaymentController');
+
